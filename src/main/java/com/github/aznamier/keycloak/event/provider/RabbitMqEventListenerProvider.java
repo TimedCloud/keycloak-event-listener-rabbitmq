@@ -35,9 +35,7 @@ public class RabbitMqEventListenerProvider implements EventListenerProvider {
 	}
 
 	@Override
-	public void close() {
-
-	}
+	public void close() {}
 
 	@Override
 	public void onEvent(Event event) {
@@ -68,7 +66,6 @@ public class RabbitMqEventListenerProvider implements EventListenerProvider {
 	}
 	
 	private static BasicProperties getMessageProps(String className) {
-		
 		Map<String,Object> headers = new HashMap<>();
 		headers.put("__TypeId__", className);
 		

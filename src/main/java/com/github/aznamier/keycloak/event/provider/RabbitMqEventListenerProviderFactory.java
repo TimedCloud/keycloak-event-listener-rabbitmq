@@ -5,11 +5,11 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
-//
+
 import java.io.*;
 import java.security.*;
 import javax.net.ssl.*;
-//
+
 import org.jboss.logging.Logger;
 import org.keycloak.Config.Scope;
 import org.keycloak.events.EventListenerProvider;
@@ -59,7 +59,7 @@ public class RabbitMqEventListenerProviderFactory implements EventListenerProvid
 
         if (cfg.getUseTls()) {
             try {
-                Boolean context = false;
+                boolean context = false;
                 SSLContext c = SSLContext.getInstance("TLSv1.2");
 
                 TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");

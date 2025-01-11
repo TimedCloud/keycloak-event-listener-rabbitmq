@@ -32,7 +32,6 @@ public class RabbitMqConfig {
 	private String trustStorePass;
 	private String keyStore;
 	private String keyStorePass;
-	//
 
 
 	private String exchange;
@@ -44,9 +43,7 @@ public class RabbitMqConfig {
 				+ "." + removeDots(session.getContext().getRealm().getName())
 				+ "." + (adminEvent.getError() != null ? "ERROR" : "SUCCESS")
 				+ "." + adminEvent.getResourceTypeAsString()
-				+ "." + adminEvent.getOperationType().toString()
-				
-				;
+				+ "." + adminEvent.getOperationType().toString();
 		return normalizeKey(routingKey);
 	}
 	
@@ -104,7 +101,6 @@ public class RabbitMqConfig {
 		cfg.trustStorePass = resolveConfigVar(config, "trust_store_pass", "");
 		cfg.keyStore = resolveConfigVar(config, "key_store", "");
 		cfg.keyStorePass = resolveConfigVar(config, "key_store_pass", "");
-		//
 
 		cfg.exchange = resolveConfigVar(config, "exchange", "amq.topic");
 		return cfg;
@@ -194,7 +190,6 @@ public class RabbitMqConfig {
 	public String getKeytStorePass() {
 		return keyStorePass;
 	}
-	//
 
 	public String getExchange() {
 		return exchange;
